@@ -1,4 +1,4 @@
-# Brain Diffusion MRI Datasets (data-others/brain)
+# Brain MRI Collections (after 2020)
 
 This repository hosts curated external **human brain diffusion MRI datasets** sourced from publicly available archives (e.g., Zenodo, Dryad, ScienceDB). The collections are provided as-is and are intended for **research, validation, benchmarking, and educational use** in neuroimaging and tractography tool development.
 
