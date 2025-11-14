@@ -1,98 +1,188 @@
 # Brain MRI Collections (after 2020)
 
-This repository hosts curated external **human brain diffusion MRI datasets** sourced from publicly available archives (e.g., Zenodo, Dryad, ScienceDB). The collections are provided as-is and are intended for **research, validation, benchmarking, and educational use** in neuroimaging and tractography tool development.
+Curated external **human brain diffusion MRI datasets** released after ~2020, sourced from public archives (e.g., Dryad, Zenodo, ScienceDB).  
+Datasets are provided **as-is** and intended for:
 
-The datasets focus on **multi-shell dMRI**, **advanced microstructural imaging**, **test–retest studies**, and **high-resolution acquisitions** that are valuable for studying structural connectivity and modeling white matter microarchitecture.
+- Research and method development  
+- Tractography benchmarking  
+- Diffusion modeling (DTI, HARDI, NODDI, SMT/SANDI)  
+- Test–retest studies  
+- Educational use  
 
-All datasets retain their original **license**, **citation**, and **metadata** as required by the data owners.
-
----
-
-## 📦 Included Releases
-
-### ✅ Brain & Spinal Cord Multi-Shell Diffusion MRI
-
-**11 subjects**, test–retest in 6
-BIDS (v1.9.0) brain+cord imaging
-📝 License: CC BY 4.0
-🔗 DOI: [https://doi.org/10.5281/zenodo.15512428](https://doi.org/10.5281/zenodo.15512428)
-Applications: brain–cord connectomics, SANDI/SMT/NODDI evaluation
+All datasets retain their original **license**, **citation**, and **usage terms** required by data owners.  
+Always cite the original dataset DOIs.
 
 ---
 
-### ✅ EDEN2020 Human Brain MRI (Milan, Italy)
-
-**15 subjects**, multimodal MRI for neurosurgery research
-📝 License: CC BY-NC-ND 4.0
-🔗 DOI: [https://doi.org/10.5281/zenodo.3994749](https://doi.org/10.5281/zenodo.3994749)
-Applications: HARDI tractography, angiography + diffusion integration
+## Releases in This Repository
 
 ---
 
-### ✅ Structural & Functional Basis of Neuronal Plasticity (HC Group)
+### 1) Ex vivo Mesoscale Human Temporal Lobe Dataset (`pitt-hippo`)
 
-**40 subjects**, combined **ASL + DWI** motor learning experiment
-📝 License: CC BY 4.0
-🔗 DOI: [https://zenodo.org/records/15149088](https://zenodo.org/records/15149088)
-Applications: CBF/metabolism connectivity, learning-induced plasticity
+Mesoscale ex vivo diffusion MRI of the human **temporal lobe**, emphasizing hippocampal lamellar and fimbria pathways.
 
----
+**One-line download command**
+```bash
+curl -L -o pitt-hippo.zip https://github.com/data-hcp/brain-after-2020/releases/download/pitt-hippo/pitt-hippo.zip
+````
 
-### ✅ Ultra-High-Resolution Human dMRI @ 760 µm
+**Summary:**
+Ex vivo dMRI at 250 µm isotropic (upsampled to 125 µm). Reconstruction using GQI. Includes hippocampal subfields (CA1–3, DG), head–body–tail regions, fimbria ROIs, and 50+ dissected pathway templates.
 
-**1 subject**, 9 × 2-h sessions
-Connectom scanner (300 mT/m gradients)
-📝 License: CC0-1.0
-🔗 DOI: [https://doi.org/10.5061/dryad.rjdfn2z8g](https://doi.org/10.5061/dryad.rjdfn2z8g)
-Applications: fine-scale tractography method development
+**License:** Public domain (Dryad)
+**DOI:** [https://doi.org/10.5061/dryad.jh9w0vtnq](https://doi.org/10.5061/dryad.jh9w0vtnq)
 
 ---
 
-### ✅ Test–Retest Cross-Scanner dMRI — B-Q Minded Study
+### 2) Brain and Spinal Cord Multi-Shell Diffusion MRI (`vu-brain-cord`)
 
-Cross-platform harmonization dataset
-📝 License: CC BY 4.0
-🔗 DOI: [https://doi.org/10.5281/zenodo.6473268](https://doi.org/10.5281/zenodo.6473268)
-Applications: reproducibility studies, inter-scanner harmonization
+Integrated **brain + cervical spinal cord** multi-shell dMRI for 11 subjects (6 with test–retest), fully BIDS-compliant.
 
----
+**One-line download command**
 
-## 🔍 Purpose
+```bash
+curl -L -o vu-brain-cord.zip https://github.com/data-hcp/brain-after-2020/releases/download/vu-brain-cord/vu-brain-cord.zip
+```
 
-This repository serves as a **central access point** for:
+Derived datasets include NODDI, SMT, SANDI, and DTI model fits, segmentations, FreeSurfer reconstructions, reverse-PE scans, and BIDS metadata.
 
-* Benchmark testing of **tractography and diffusion models**
-* Evaluating **brain–spinal cord joint pipelines**
-* Cross-scanner harmonization research
-* Public test datasets for **DSI Studio** and other tools
-* Training and education in connectomics
+**License:** CC BY 4.0
+**DOI:** [https://doi.org/10.5281/zenodo.15512428](https://doi.org/10.5281/zenodo.15512428)
 
 ---
 
-## 📂 Data Format
+### 3) EDEN2020 Human Brain MRI Datasets (`vssru-eden2020`)
 
-* Primarily **NIfTI** (.nii/.nii.gz)
-* BIDS directory structure when provided
-* Derivatives include segmentation, model maps, QC reports, etc.
+High-resolution multimodal MRI (T1, FLAIR, SWI, DTI, NODDI) from 15 healthy adults, collected to support neurosurgical imaging research.
 
-Each release includes its original documentation and metadata.
+**One-line download command**
+
+```bash
+curl -L -o vssru-eden2020.zip https://github.com/data-hcp/brain-after-2020/releases/download/vssru-eden2020/vssru-eden2020.zip
+```
+
+Includes angiographic, HARDI, and white matter microstructure imaging; derived DTI/NODDI maps; probabilistic tractography.
+
+**License:** CC BY-NC-ND 4.0
+**DOI:** [https://doi.org/10.5281/zenodo.3994749](https://doi.org/10.5281/zenodo.3994749)
 
 ---
 
-## 📑 Citations
+### 4) Structural & Functional Basis of Neuronal Plasticity — Healthy Controls (`vitality`)
 
-Users must cite the **original dataset authors** when publishing research.
-Citation information is provided inside each release description.
+Multimodal MRI for studying **CBF, CMRO₂, DWI, task-induced plasticity**, and metabolic responses.
+
+**One-line download command**
+
+```bash
+curl -L -o vitality.zip https://github.com/data-hcp/brain-after-2020/releases/download/vitality/vitality.zip
+```
+
+Includes MP2RAGE, pCASL DEXI perfusion scans, two DWIs, TRUST/IR-EPI metabolic sequences, task behavioral traces.
+
+**License:** CC BY 4.0
+**Source:** [https://zenodo.org/records/15149088](https://zenodo.org/records/15149088)
 
 ---
 
-## ⚖️ Licensing
+### 5) In Vivo Whole-Brain Connectom dMRI at 760 µm (`mgh-760`)
 
-Each dataset follows its original license terms:
+Ultra-high-resolution Connectom dMRI with **1260 directions**, 18 hours of acquisition.
 
-* **CC BY 4.0**
-* **CC BY-NC-ND 4.0**
-* **CC0-1.0**
-  Please review before usage.
+**One-line download command**
 
+```bash
+curl -L -o mgh-760.zip https://github.com/data-hcp/brain-after-2020/releases/download/mgh-760/mgh-760.zip
+```
 
+Includes submillimeter structural MRI, field maps, acquisition logs, and preprocessing scripts.
+
+**License:** CC0 (public domain)
+**DOI:** [https://doi.org/10.5061/dryad.rjdfn2z8g](https://doi.org/10.5061/dryad.rjdfn2z8g)
+
+---
+
+### 6) Imaging Chinese Young Brains – CHIMGEN Subset (`icyb`)
+
+Large-sample multimodal dataset of **215 young Chinese adults** with T1, rs-fMRI, DTI, and ASL.
+
+**One-line download command**
+
+```bash
+curl -L -o icyb.zip https://github.com/data-hcp/brain-after-2020/releases/download/icyb/icyb.zip
+```
+
+Includes BIDS-structured data with defaced anatomical scans and MRI-QC reports.
+
+**License:** CC BY 4.0
+**DOI:** [https://doi.org/10.11922/sciencedb.00740](https://doi.org/10.11922/sciencedb.00740)
+
+---
+
+### 7) Functional & Structural MRI After tSMS Stimulation (`cinac-tsms`)
+
+Double-blind crossover experiment comparing **real vs sham tSMS** over right M1.
+
+**One-line download command**
+
+```bash
+curl -L -o cinac-tsms.zip https://github.com/data-hcp/brain-after-2020/releases/download/cinac-tsms/cinac-tsms.zip
+```
+
+Includes multiecho resting-state fMRI, DWI, corrected phase images, and defaced anatomy.
+
+**License:** CC BY 4.0
+**DOI:** [https://doi.org/10.5281/zenodo.15224957](https://doi.org/10.5281/zenodo.15224957)
+
+---
+
+### 8) B-Q Minded Test–Retest Cross-Scanner Dataset (`bqminded`)
+
+Test–retest dataset for **cross-scanner qMRI and diffusion harmonization** (Skyra 3T vs PrismaFit 3T).
+
+**One-line download command**
+
+```bash
+curl -L -o bqminded.zip https://github.com/data-hcp/brain-after-2020/releases/download/bqminded/bqminded.zip
+```
+
+Used in recent harmonization studies (NeuroCombat, LongCombat). Includes anatomical and diffusion MRI.
+
+**License:** CC BY 4.0
+**DOI:** [https://doi.org/10.5281/zenodo.6473268](https://doi.org/10.5281/zenodo.6473268)
+
+---
+
+## Licensing & Attribution
+
+Each dataset retains its **original license**. Use must comply with:
+
+* CC0 / CC BY
+* CC BY-NC / CC BY-NC-ND
+* Dataset-specific restrictions
+
+Cite:
+
+1. The dataset DOI
+2. The primary research article (if applicable)
+3. Optionally:
+   *“Data access facilitated by the `data-hcp/brain-after-2020` repository.”*
+
+---
+
+## Intended Use
+
+* Diffusion modeling (DTI, HARDI, NODDI, SMT/SANDI)
+* High-resolution tractography
+* Test–retest analyses
+* Cross-scanner harmonization
+* Educational teaching sets for MRI & connectomics
+
+---
+
+## Notes
+
+* Some datasets include partial acquisitions or subject-specific issues; see their notes.
+* Derived files (FIB, SRC, microstructural maps) reflect specific pipelines.
+* Some datasets include only derivatives, not original raw DICOM/NIfTI.
