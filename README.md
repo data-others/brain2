@@ -22,16 +22,19 @@ Always cite the original dataset DOIs.
 
 Mesoscale ex vivo diffusion MRI of the human **temporal lobe**, emphasizing hippocampal lamellar and fimbria pathways.
 
-**One-line download command**
+**Download command**
 ```bash
-curl -L -o pitt-hippo.zip https://github.com/data-hcp/brain-after-2020/releases/download/pitt-hippo/pitt-hippo.zip
-````
+curl -s https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/pitt-hippo | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
+```
+```powershell
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/pitt-hippo").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
+```
 
 **Summary:**
 Ex vivo dMRI at 250 µm isotropic (upsampled to 125 µm). Reconstruction using GQI. Includes hippocampal subfields (CA1–3, DG), head–body–tail regions, fimbria ROIs, and 50+ dissected pathway templates.
 
-**License:** Public domain (Dryad)
-**DOI:** [https://doi.org/10.5061/dryad.jh9w0vtnq](https://doi.org/10.5061/dryad.jh9w0vtnq)
+**License:** Public domain (Dryad)  
+**DOI:** https://doi.org/10.5061/dryad.jh9w0vtnq
 
 ---
 
@@ -39,16 +42,18 @@ Ex vivo dMRI at 250 µm isotropic (upsampled to 125 µm). Reconstruction using G
 
 Integrated **brain + cervical spinal cord** multi-shell dMRI for 11 subjects (6 with test–retest), fully BIDS-compliant.
 
-**One-line download command**
-
+**Download command**
 ```bash
-curl -L -o vu-brain-cord.zip https://github.com/data-hcp/brain-after-2020/releases/download/vu-brain-cord/vu-brain-cord.zip
+curl -s https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/vu-brain-cord | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
+```
+```powershell
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/vu-brain-cord").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 Derived datasets include NODDI, SMT, SANDI, and DTI model fits, segmentations, FreeSurfer reconstructions, reverse-PE scans, and BIDS metadata.
 
-**License:** CC BY 4.0
-**DOI:** [https://doi.org/10.5281/zenodo.15512428](https://doi.org/10.5281/zenodo.15512428)
+**License:** CC BY 4.0  
+**DOI:** https://doi.org/10.5281/zenodo.15512428
 
 ---
 
@@ -56,16 +61,18 @@ Derived datasets include NODDI, SMT, SANDI, and DTI model fits, segmentations, F
 
 High-resolution multimodal MRI (T1, FLAIR, SWI, DTI, NODDI) from 15 healthy adults, collected to support neurosurgical imaging research.
 
-**One-line download command**
-
+**Download command**
 ```bash
-curl -L -o vssru-eden2020.zip https://github.com/data-hcp/brain-after-2020/releases/download/vssru-eden2020/vssru-eden2020.zip
+curl -s https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/vssru-eden2020 | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
+```
+```powershell
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/vssru-eden2020").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 Includes angiographic, HARDI, and white matter microstructure imaging; derived DTI/NODDI maps; probabilistic tractography.
 
-**License:** CC BY-NC-ND 4.0
-**DOI:** [https://doi.org/10.5281/zenodo.3994749](https://doi.org/10.5281/zenodo.3994749)
+**License:** CC BY-NC-ND 4.0  
+**DOI:** https://doi.org/10.5281/zenodo.3994749
 
 ---
 
@@ -73,16 +80,18 @@ Includes angiographic, HARDI, and white matter microstructure imaging; derived D
 
 Multimodal MRI for studying **CBF, CMRO₂, DWI, task-induced plasticity**, and metabolic responses.
 
-**One-line download command**
-
+**Download command**
 ```bash
-curl -L -o vitality.zip https://github.com/data-hcp/brain-after-2020/releases/download/vitality/vitality.zip
+curl -s https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/vitality | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
+```
+```powershell
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/vitality").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 Includes MP2RAGE, pCASL DEXI perfusion scans, two DWIs, TRUST/IR-EPI metabolic sequences, task behavioral traces.
 
-**License:** CC BY 4.0
-**Source:** [https://zenodo.org/records/15149088](https://zenodo.org/records/15149088)
+**License:** CC BY 4.0  
+**Source:** https://zenodo.org/records/15149088
 
 ---
 
@@ -90,16 +99,18 @@ Includes MP2RAGE, pCASL DEXI perfusion scans, two DWIs, TRUST/IR-EPI metabolic s
 
 Ultra-high-resolution Connectom dMRI with **1260 directions**, 18 hours of acquisition.
 
-**One-line download command**
-
+**Download command**
 ```bash
-curl -L -o mgh-760.zip https://github.com/data-hcp/brain-after-2020/releases/download/mgh-760/mgh-760.zip
+curl -s https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/mgh-760 | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
+```
+```powershell
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/mgh-760").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 Includes submillimeter structural MRI, field maps, acquisition logs, and preprocessing scripts.
 
-**License:** CC0 (public domain)
-**DOI:** [https://doi.org/10.5061/dryad.rjdfn2z8g](https://doi.org/10.5061/dryad.rjdfn2z8g)
+**License:** CC0  
+**DOI:** https://doi.org/10.5061/dryad.rjdfn2z8g
 
 ---
 
@@ -107,16 +118,18 @@ Includes submillimeter structural MRI, field maps, acquisition logs, and preproc
 
 Large-sample multimodal dataset of **215 young Chinese adults** with T1, rs-fMRI, DTI, and ASL.
 
-**One-line download command**
-
+**Download command**
 ```bash
-curl -L -o icyb.zip https://github.com/data-hcp/brain-after-2020/releases/download/icyb/icyb.zip
+curl -s https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/icyb | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
+```
+```powershell
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/icyb").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 Includes BIDS-structured data with defaced anatomical scans and MRI-QC reports.
 
-**License:** CC BY 4.0
-**DOI:** [https://doi.org/10.11922/sciencedb.00740](https://doi.org/10.11922/sciencedb.00740)
+**License:** CC BY 4.0  
+**DOI:** https://doi.org/10.11922/sciencedb.00740
 
 ---
 
@@ -124,16 +137,18 @@ Includes BIDS-structured data with defaced anatomical scans and MRI-QC reports.
 
 Double-blind crossover experiment comparing **real vs sham tSMS** over right M1.
 
-**One-line download command**
-
+**Download command**
 ```bash
-curl -L -o cinac-tsms.zip https://github.com/data-hcp/brain-after-2020/releases/download/cinac-tsms/cinac-tsms.zip
+curl -s https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/cinac-tsms | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
+```
+```powershell
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/cinac-tsms").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 Includes multiecho resting-state fMRI, DWI, corrected phase images, and defaced anatomy.
 
-**License:** CC BY 4.0
-**DOI:** [https://doi.org/10.5281/zenodo.15224957](https://doi.org/10.5281/zenodo.15224957)
+**License:** CC BY 4.0  
+**DOI:** https://doi.org/10.5281/zenodo.15224957
 
 ---
 
@@ -141,16 +156,18 @@ Includes multiecho resting-state fMRI, DWI, corrected phase images, and defaced 
 
 Test–retest dataset for **cross-scanner qMRI and diffusion harmonization** (Skyra 3T vs PrismaFit 3T).
 
-**One-line download command**
-
+**Download command**
 ```bash
-curl -L -o bqminded.zip https://github.com/data-hcp/brain-after-2020/releases/download/bqminded/bqminded.zip
+curl -s https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/bqminded | jq -r '.assets[].browser_download_url' | xargs -n1 -P4 curl -LO
+```
+```powershell
+(Invoke-RestMethod "https://api.github.com/repos/data-hcp/brain-after-2020/releases/tags/bqminded").assets | ForEach-Object { Invoke-WebRequest $_.browser_download_url -OutFile (Split-Path $_.browser_download_url -Leaf) }
 ```
 
 Used in recent harmonization studies (NeuroCombat, LongCombat). Includes anatomical and diffusion MRI.
 
-**License:** CC BY 4.0
-**DOI:** [https://doi.org/10.5281/zenodo.6473268](https://doi.org/10.5281/zenodo.6473268)
+**License:** CC BY 4.0  
+**DOI:** https://doi.org/10.5281/zenodo.6473268
 
 ---
 
@@ -166,7 +183,7 @@ Cite:
 
 1. The dataset DOI
 2. The primary research article (if applicable)
-3. Optionally:
+3. Optionally:  
    *“Data access facilitated by the `data-hcp/brain-after-2020` repository.”*
 
 ---
